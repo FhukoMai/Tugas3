@@ -1,22 +1,23 @@
-# Distributed Synchronization System
+## Sistem Sinkronisasi Terdistribusi
+Tugas sistem terdistribusi yang mengimplementasikan konsensus Raft/PBFT, distributed locking, antrean consistent hashing, dan cache.
 
-This is a comprehensive distributed system implementing Raft/PBFT consensus, distributed locking, consistent hashing queues, and a MESI coherent cache.
+## Fitur yang Diimplementasikan
 
-## Features Implemented for "Excellent" Grade:
-- **Core A**: Distributed Lock Manager using custom Raft implementation.
-- **Core B**: Distributed Queue using Consistent Hashing.
-- **Core C**: Distributed Cache Coherence using MESI Protocol and LRU cache.
-- **Core D**: Full Docker & Docker Compose containerization with Prometheus metrics.
-- **Bonus A**: Advanced Consensus (PBFT module implemented).
-- **Bonus D**: Security (JWT Authentication and Role-Based Access Control).
+1. Core A: Manajer Kunci Terdistribusi (Distributed Lock Manager) menggunakan implementasi Raft kustom.
 
-## Getting Started
-Please refer to `docs/deployment_guide.md` for running the cluster via Docker.
+2. Core B: Antrean Terdistribusi menggunakan Consistent Hashing.
+
+3. Core C: Koherensi Cache Terdistribusi menggunakan Protokol MESI dan cache LRU.
+
+4. Core D: Kontainerisasi penuh dengan Docker & Docker Compose beserta metrik Prometheus.
+
+5. Bonus A: Konsensus Lanjutan (modul PBFT diimplementasikan).
+
+6. Bonus D: Keamanan (Autentikasi JWT dan Kontrol Akses Berbasis Peran / Role-Based Access Control).
 
 ## Documentation
 - Architecture: `docs/architecture.md`
 - Deployment: `docs/deployment_guide.md`
-- API Spec: Available live at `http://localhost:8001/docs` when running.
 
 ## Demo Video
 [Insert YouTube Link Here]
