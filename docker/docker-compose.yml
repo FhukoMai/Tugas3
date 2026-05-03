@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  node1:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.node
+    ports:
+      - "8001:8000"
+    environment:
+      - NODE_ID=node1
+      - PORT=8000
+      - PEERS=http://node2:8000,http://node3:8000
+      - SECRET_KEY=supersecretkey_for_jwt
+      - CONSENSUS_ALGO=raft
+    networks:
+      - sync_network
+
+  node2:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.node
+    ports:
+      - "8002:8000"
+    environment:
+      - NODE_ID=node2
+      - PORT=8000
+      - PEERS=http://node1:8000,http://node3:8000
+      - SECRET_KEY=supersecretkey_for_jwt
+      - CONSENSUS_ALGO=raft
+    networks:
+      - sync_network
+
+  node3:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.node
+    ports:
+      - "8003:8000"
+    environment:
+      - NODE_ID=node3
+      - PORT=8000
+      - PEERS=http://node1:8000,http://node2:8000
+      - SECRET_KEY=supersecretkey_for_jwt
+      - CONSENSUS_ALGO=raft
+    networks:
+      - sync_network
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - sync_network
+
+networks:
+  sync_network:
+    driver: bridge
