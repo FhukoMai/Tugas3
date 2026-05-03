@@ -20,4 +20,4 @@ Tugas sistem terdistribusi yang mengimplementasikan konsensus Raft/PBFT, distrib
 - Deployment: `docs/deployment_guide.md`
 
 ## Demo Video
-[Insert YouTube Link Here]
+[https://youtu.be/Mj9ngGHrgxU?si=M-PqA-XvIHZ-cKRN]
